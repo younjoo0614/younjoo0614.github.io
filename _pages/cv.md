@@ -42,27 +42,17 @@ permalink: /cv/
 {% endfor %}
 </ul>
 
-## Talks
+## Projects
 
 <ul>
-{% assign talks = site.talks | sort: 'date' | reverse %}
-{% for post in talks %}
+{% assign projs = site.projects | sort: 'date' | reverse %}
+{% for post in projs %}
 	<li>
-		<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-		{% if post.venue %} &mdash; {{ post.venue }}{% endif %}
-		{% if post.date %} ({{ post.date | date: "%b %Y" }}){% endif %}
-	</li>
-{% endfor %}
-</ul>
-
-## Teaching
-
-<ul>
-{% assign teach = site.teaching | sort: 'date' | reverse %}
-{% for post in teach %}
-	<li>
-		<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-		{% if post.venue %} &mdash; {{ post.venue }}{% endif %}
+		{% if post.external_url %}
+			<a href="{{ post.external_url }}" target="_blank" rel="noopener">{{ post.title }}</a>
+		{% else %}
+			<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+		{% endif %}
 		{% if post.date %} ({{ post.date | date: "%Y" }}){% endif %}
 	</li>
 {% endfor %}
