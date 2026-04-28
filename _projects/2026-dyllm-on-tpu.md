@@ -6,7 +6,7 @@ excerpt: "Running and optimizing DyLLM on Google TPU hardware."
 
 # Porting DyLLM to TPU: Making Dynamic Sparse Inference XLA-Friendly
 
-The original code is available at: https://github.com/younjoo0614/DyLLM_tpu.git
+The original code is available [here](https://github.com/younjoo0614/DyLLM_tpu.git).
 
 DyLLM is a training-free inference framework for diffusion language models. The key observation is that, during iterative denoising, not every token changes significantly at every step. DyLLM exploits this by selecting salient tokens after attention, recomputing expensive FFN operations mainly for those tokens, and reusing cached activations for the rest. More details are explained in our paper: [DyLLM](https://arxiv.org/abs/2603.08026).
 

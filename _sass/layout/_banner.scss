@@ -8,19 +8,14 @@
 
 	#banner {
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
 		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		@include padding(3em, 0, (1.5em, 0, 0, 0));
+		background-color: _palette(bg);
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		height: auto;
 		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
+		min-height: 0;
 		position: relative;
 		top: -3.25em;
 
@@ -100,9 +95,11 @@
 			max-height: 50em;
 
 			&.alt {
-				  opacity: 0.75;
-			}
-		}
+				  opaciauto;
+			min-height: 0;
+			max-height: none;
+			padding-top: 5em;
+			padding-bottom: 2.5
 
 		&.style1 { &:after { background-color: _palette(accent1); } }
 		&.style2 { &:after { background-color: _palette(accent2); } }

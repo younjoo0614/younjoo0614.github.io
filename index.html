@@ -26,7 +26,17 @@ title: Home
 	<!-- Banner: profile (avatar + links) on the left -->
 	<section id="banner" class="major profile-banner">
 		<div class="inner">
-			<span class="profile-image" style="background-image: url('{{ site.author.avatar | relative_url }}');" aria-label="{{ site.author.name }}"></span>
+			<div class="profile-aside">
+				<span class="profile-image" style="background-image: url('{{ site.author.avatar | relative_url }}');" aria-label="{{ site.author.name }}"></span>
+				<ul class="profile-icons">
+					{% if site.socials.GitHub and site.socials.GitHub != '' %}
+						<li><a href="{{ site.socials.GitHub }}" class="icon brands fa-github" target="_blank" rel="noopener" aria-label="GitHub"><span class="label">GitHub</span></a></li>
+					{% endif %}
+					{% if site.socials.LinkedIn and site.socials.LinkedIn != '' %}
+						<li><a href="{{ site.socials.LinkedIn }}" class="icon brands fa-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
+					{% endif %}
+				</ul>
+			</div>
 			<div class="profile-content">
 				<header class="major">
 					<h1>{{ site.author.name | default: site.title }}</h1>
@@ -41,14 +51,6 @@ title: Home
 				<div class="content">
 					<ul class="actions">
 						<li><a href="{{ '/cv/' | relative_url }}" class="button next scrolly">View Full CV</a></li>
-						{% if has_email %}
-							<li><a href="mailto:{{ site.email }}" class="button">Email</a></li>
-						{% endif %}
-						{% for social in site.socials %}
-							{% if social[1] and social[1] != '' %}
-								<li><a href="{{ social[1] }}" class="button" target="_blank" rel="noopener">{{ social[0] }}</a></li>
-							{% endif %}
-						{% endfor %}
 					</ul>
 				</div>
 			</div>
