@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+	Archive layout: list of items from a collection (publications, talks, teaching, ...).
+	Renders forty's banner and then iterates the collection named in `page.collection`.
+-->
+<html>
+
+{% include head.html %}
+
+<body class="is-preload">
+
+	{% include header.html %}
+
+	<!-- Banner -->
+	<section id="banner" class="major">
+		<div class="inner">
+			<header class="major">
+				<h1>{{ page.title }}</h1>
+			</header>
+			{% if page.description %}
+			<div class="content">
+				<p>{{ page.description }}</p>
+			</div>
+			{% endif %}
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main" class="alt">
+		<section>
+			<div class="inner">
+				{{ content }}
+
+				{% assign items = site[page.collection] | sort: 'date' | reverse %}
+				{% if items.size > 0 %}
+				<ul class="alt">
+					{% for item in items %}
+						{% include archive-single.html post=item %}
+					{% endfor %}
+				</ul>
+				{% else %}
+				<p><em>No entries yet.</em></p>
+				{% endif %}
+			</div>
+		</section>
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>

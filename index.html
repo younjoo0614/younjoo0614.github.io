@@ -1,0 +1,152 @@
+---
+layout: null
+permalink: /
+title: Home
+---
+<!DOCTYPE html>
+<!--
+	Home page (CV-first landing).
+	Uses forty's banner + section style to present an academic CV summary on the
+	first page of the site, mirroring academicpages' content while keeping forty's look.
+-->
+<html>
+
+{% include head.html %}
+
+<body class="is-preload landing">
+
+	{% include header.html %}
+
+	<!-- Banner (acts as the "About" / author profile) -->
+	<section id="banner" class="major">
+		<div class="inner">
+			<header class="major">
+				<h1>{{ site.author.name | default: site.title }}</h1>
+			</header>
+			<div class="content">
+				<p>{{ site.author.bio | default: site.description }}</p>
+				<ul class="actions">
+					<li><a href="{{ '/cv/' | relative_url }}" class="button next scrolly">View Full CV</a></li>
+					{% if site.socials.GitHub %}
+						<li><a href="{{ site.socials.GitHub }}" class="button" target="_blank" rel="noopener">GitHub</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- About / Profile -->
+		<section id="about">
+			<div class="inner">
+				<header class="major">
+					<h2>About</h2>
+				</header>
+				<p>
+					Hello! I'm <strong>{{ site.author.name | default: site.title }}</strong>{% if site.author.employer %},
+					affiliated with <strong>{{ site.author.employer }}</strong>{% endif %}{% if site.author.location %},
+					based in {{ site.author.location }}{% endif %}.
+				</p>
+				<p>{{ site.author.bio | default: site.description }}</p>
+				<ul class="actions">
+					<li><a href="{{ '/cv/' | relative_url }}" class="button special">Read my CV</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Selected Publications -->
+		<section id="publications" class="tiles">
+			{% assign recent_pubs = site.publications | sort: 'date' | reverse | slice: 0, 3 %}
+			{% if recent_pubs.size > 0 %}
+				{% for pub in recent_pubs %}
+					<article>
+						<header class="major">
+							<h3><a href="{{ pub.url | relative_url }}" class="link">{{ pub.title }}</a></h3>
+							<p>
+								{% if pub.venue %}{{ pub.venue }}{% endif %}
+								{% if pub.date %} &middot; {{ pub.date | date: "%Y" }}{% endif %}
+							</p>
+						</header>
+						<a href="{{ pub.url | relative_url }}" class="link primary"></a>
+					</article>
+				{% endfor %}
+			{% else %}
+				<article>
+					<header class="major">
+						<h3>Selected Publications</h3>
+						<p>Add Markdown files under <code>_publications/</code> to populate this section.</p>
+					</header>
+					<a href="{{ '/publications/' | relative_url }}" class="link primary"></a>
+				</article>
+			{% endif %}
+		</section>
+
+		<!-- Recent Talks / Teaching -->
+		<section id="highlights">
+			<div class="inner">
+				<header class="major">
+					<h2>Recent Talks &amp; Teaching</h2>
+				</header>
+
+				{% assign recent_talks = site.talks | sort: 'date' | reverse | slice: 0, 3 %}
+				{% if recent_talks.size > 0 %}
+					<h3>Talks</h3>
+					<ul>
+						{% for t in recent_talks %}
+							<li>
+								<a href="{{ t.url | relative_url }}">{{ t.title }}</a>
+								{% if t.venue %} &mdash; {{ t.venue }}{% endif %}
+								{% if t.date %} ({{ t.date | date: "%b %Y" }}){% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+				{% assign recent_teach = site.teaching | sort: 'date' | reverse | slice: 0, 3 %}
+				{% if recent_teach.size > 0 %}
+					<h3>Teaching</h3>
+					<ul>
+						{% for c in recent_teach %}
+							<li>
+								<a href="{{ c.url | relative_url }}">{{ c.title }}</a>
+								{% if c.venue %} &mdash; {{ c.venue }}{% endif %}
+								{% if c.date %} ({{ c.date | date: "%Y" }}){% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+				{% if recent_talks.size == 0 and recent_teach.size == 0 %}
+					<p><em>Add entries under <code>_talks/</code> or <code>_teaching/</code> to populate this section.</em></p>
+				{% endif %}
+
+				<ul class="actions">
+					<li><a href="{{ '/talks/' | relative_url }}" class="button">All Talks</a></li>
+					<li><a href="{{ '/teaching/' | relative_url }}" class="button">All Teaching</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section id="cta">
+			<div class="inner">
+				<header class="major">
+					<h2>Get in touch</h2>
+				</header>
+				<p>The fastest way to reach me is by email or via the links below.</p>
+				<ul class="actions">
+					<li><a href="mailto:{{ site.email }}" class="button special">Email me</a></li>
+					<li><a href="{{ '/cv/' | relative_url }}" class="button">Download CV</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>

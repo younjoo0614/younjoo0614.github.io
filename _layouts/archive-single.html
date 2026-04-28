@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+	Single item view for collection entries (publications, talks, teaching, portfolio).
+	Reuses forty's "generic" page chrome with an optional banner image.
+-->
+<html>
+
+{% include head.html %}
+
+<body class="is-preload">
+
+	{% include header.html %}
+
+	{% if page.image %}
+	<section id="banner" class="style2">
+		<div class="inner">
+			<span class="image">
+				<img src="{{ page.image | relative_url }}" alt="">
+			</span>
+			<header class="major">
+				<h1>{{ page.title }}</h1>
+			</header>
+			{% if page.excerpt %}
+			<div class="content">{{ page.excerpt }}</div>
+			{% endif %}
+		</div>
+	</section>
+	{% else %}
+	<section id="banner" class="major">
+		<div class="inner">
+			<header class="major">
+				<h1>{{ page.title }}</h1>
+			</header>
+			{% if page.excerpt %}
+			<div class="content"><p>{{ page.excerpt }}</p></div>
+			{% endif %}
+		</div>
+	</section>
+	{% endif %}
+
+	<div id="main" class="alt">
+		<section>
+			<div class="inner">
+				<header class="major">
+					<h2>Details</h2>
+				</header>
+
+				<ul class="alt">
+					{% if page.date %}<li><strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}</li>{% endif %}
+					{% if page.venue %}<li><strong>Venue:</strong> {{ page.venue }}</li>{% endif %}
+					{% if page.location %}<li><strong>Location:</strong> {{ page.location }}</li>{% endif %}
+					{% if page.authors %}<li><strong>Authors:</strong> {{ page.authors }}</li>{% endif %}
+					{% if page.collection %}<li><strong>Type:</strong> {{ page.collection | capitalize }}</li>{% endif %}
+				</ul>
+
+				{{ content }}
+
+				{% if page.paperurl %}
+				<ul class="actions">
+					<li><a href="{{ page.paperurl }}" class="button special" target="_blank" rel="noopener">Download paper</a></li>
+				</ul>
+				{% endif %}
+			</div>
+		</section>
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>
