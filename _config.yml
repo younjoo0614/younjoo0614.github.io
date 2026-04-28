@@ -1,7 +1,7 @@
 # Site settings
-title: Younjoo
+title: Younjoo Lee
 subtitle: Academic CV
-email: your-email@example.com
+email: younjoo0614@snu.ac.kr
 description: >-
   Personal academic website of Younjoo &mdash; CV, publications, talks and teaching.
 # Leave baseurl empty when serving from a user/organization site (USERNAME.github.io).
@@ -11,12 +11,12 @@ url: "https://younjoo0614.github.io"
 # Author / profile (used on the homepage banner and the CV page)
 author:
   name: Younjoo
-  avatar: /assets/images/pic01.jpg
+  avatar: /assets/images/profile.jpg
   bio: >-
     Researcher / student. Replace this bio in <code>_config.yml</code> with a
     short description of who you are and what you work on.
   location: Seoul, South Korea
-  employer: Your Affiliation
+  employer: Seoul National University
 
 # Contact info (used by forty's footer contact section)
 street_address:
@@ -28,13 +28,13 @@ phone:
 
 # Homepage tile config (kept for compatibility with forty includes)
 tiles-source: pages
-tiles-count: 6
+tiles-count: 4
 
 # Social settings - key must match name of font awesome icon
 # Icons are not shown if value is empty
 socials:
   GitHub: https://github.com/younjoo0614
-  LinkedIn:
+  LinkedIn: https://www.linkedin.com/in/younjoo-lee-b98b1a276
   Twitter:
   Google-Plus:
   Instagram:
@@ -52,13 +52,10 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  talks:
+  projects:
     output: true
     permalink: /:collection/:path/
-  teaching:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
+  life:
     output: true
     permalink: /:collection/:path/
 
@@ -71,17 +68,12 @@ defaults:
       layout: archive-single
   - scope:
       path: ""
-      type: talks
+      type: projects
     values:
       layout: archive-single
   - scope:
       path: ""
-      type: teaching
-    values:
-      layout: archive-single
-  - scope:
-      path: ""
-      type: portfolio
+      type: life
     values:
       layout: archive-single
   - scope:

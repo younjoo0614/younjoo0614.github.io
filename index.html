@@ -59,53 +59,33 @@ title: Home
 	<div id="main">
 
 		<section class="tiles">
-			<article style="background-image: url('{{ '/assets/images/pic02.jpg' | relative_url }}');">
+			<article>
 				<header class="major">
 					<h3><a href="{{ '/cv/' | relative_url }}" class="link">CV</a></h3>
 					<p>Education, experience and skills.</p>
 				</header>
 				<a href="{{ '/cv/' | relative_url }}" class="link primary"></a>
 			</article>
-			<article style="background-image: url('{{ '/assets/images/pic03.jpg' | relative_url }}');">
+			<article>
 				<header class="major">
 					<h3><a href="{{ '/publications/' | relative_url }}" class="link">Publications</a></h3>
 					<p>Selected research papers and articles.</p>
 				</header>
 				<a href="{{ '/publications/' | relative_url }}" class="link primary"></a>
 			</article>
-			<article style="background-image: url('{{ '/assets/images/pic04.jpg' | relative_url }}');">
+			<article>
 				<header class="major">
-					<h3><a href="{{ '/talks/' | relative_url }}" class="link">Talks</a></h3>
-					<p>Conference and invited talks.</p>
+					<h3><a href="{{ '/projects/' | relative_url }}" class="link">Projects</a></h3>
+					<p>Personal, research and side projects.</p>
 				</header>
-				<a href="{{ '/talks/' | relative_url }}" class="link primary"></a>
+				<a href="{{ '/projects/' | relative_url }}" class="link primary"></a>
 			</article>
-			<article style="background-image: url('{{ '/assets/images/pic05.jpg' | relative_url }}');">
+			<article>
 				<header class="major">
-					<h3><a href="{{ '/teaching/' | relative_url }}" class="link">Teaching</a></h3>
-					<p>Courses and teaching assistantships.</p>
+					<h3><a href="{{ '/life/' | relative_url }}" class="link">Life</a></h3>
+					<p>Hobbies, travels and a peek beyond research.</p>
 				</header>
-				<a href="{{ '/teaching/' | relative_url }}" class="link primary"></a>
-			</article>
-			<article style="background-image: url('{{ '/assets/images/pic06.jpg' | relative_url }}');">
-				<header class="major">
-					<h3><a href="{{ '/portfolio/' | relative_url }}" class="link">Portfolio</a></h3>
-					<p>Projects and selected work.</p>
-				</header>
-				<a href="{{ '/portfolio/' | relative_url }}" class="link primary"></a>
-			</article>
-			{% assign contact_link = '/cv/' | relative_url %}
-			{% if has_email %}
-				{% assign contact_link = 'mailto:' | append: site.email %}
-			{% elsif site.socials.GitHub %}
-				{% assign contact_link = site.socials.GitHub %}
-			{% endif %}
-			<article style="background-image: url('{{ '/assets/images/pic07.jpg' | relative_url }}');">
-				<header class="major">
-					<h3><a href="{{ contact_link }}" class="link">Contact</a></h3>
-					<p>Get in touch by email or social links.</p>
-				</header>
-				<a href="{{ contact_link }}" class="link primary"></a>
+				<a href="{{ '/life/' | relative_url }}" class="link primary"></a>
 			</article>
 		</section>
 

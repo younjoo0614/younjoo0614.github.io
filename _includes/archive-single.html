@@ -1,8 +1,14 @@
 {% assign post = include.post %}
+{% assign entry_url = post.url | relative_url %}
+{% assign entry_target = '' %}
+{% if post.external_url %}
+	{% assign entry_url = post.external_url %}
+	{% assign entry_target = ' target="_blank" rel="noopener"' %}
+{% endif %}
 <li>
 	<article class="archive-entry">
 		<h3 style="margin-bottom:0.25em;">
-			<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+			<a href="{{ entry_url }}"{{ entry_target }}>{{ post.title }}</a>
 		</h3>
 		<p style="margin:0 0 0.5em 0; color: rgba(255,255,255,0.55); font-size: 0.9em;">
 			{% if post.date %}{{ post.date | date: "%B %d, %Y" }}{% endif %}
