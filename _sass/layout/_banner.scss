@@ -90,16 +90,16 @@
 		}
 
 		&.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
-
-			&.alt {
-				  opaciauto;
+			height: auto;
 			min-height: 0;
 			max-height: none;
 			padding-top: 5em;
-			padding-bottom: 2.5
+			padding-bottom: 2.5em;
+
+			&.alt {
+				opacity: 0.75;
+			}
+		}
 
 		&.style1 { &:after { background-color: _palette(accent1); } }
 		&.style2 { &:after { background-color: _palette(accent2); } }
