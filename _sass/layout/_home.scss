@@ -1,0 +1,90 @@
+///
+/// Homepage profile banner overrides.
+/// Adds a left-aligned profile (avatar + links) on top of the forty banner.
+///
+
+#banner.profile-banner {
+	@include vendor('justify-content', 'flex-start');
+	text-align: left;
+
+	> .inner {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		@include vendor('flex-direction', 'row');
+		width: calc(100% - 6em);
+		max-width: _size(inner);
+		margin: 0 auto;
+
+		.profile-image {
+			display: block;
+			flex: 0 0 auto;
+			width: 12em;
+			height: 12em;
+			margin-right: 2.5em;
+			border-radius: 50%;
+			overflow: hidden;
+			border: 4px solid _palette(fg);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.profile-content {
+			flex: 1 1 auto;
+			text-align: left;
+
+			header {
+				width: auto;
+				margin-bottom: 1em;
+
+				h1 {
+					margin-bottom: 0.25em;
+				}
+
+				p.subtitle {
+					font-size: 0.9em;
+					font-weight: _font(weight-bold);
+					letter-spacing: _font(letter-spacing-alt);
+					text-transform: uppercase;
+					margin-bottom: 0;
+					opacity: 0.85;
+				}
+			}
+
+			.content {
+				display: block;
+				margin: 0;
+
+				ul.actions {
+					margin: 0;
+
+					li {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint(small) {
+		> .inner {
+			@include vendor('flex-direction', 'column');
+			text-align: center;
+			width: calc(100% - 3em);
+
+			.profile-image {
+				width: 9em;
+				height: 9em;
+				margin: 0 auto 1.5em auto;
+			}
+
+			.profile-content {
+				text-align: center;
+
+				header p.subtitle {
+					br { display: none; }
+				}
+			}
+		}
+	}
+}
