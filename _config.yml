@@ -1,0 +1,105 @@
+# Site settings
+title: Younjoo
+subtitle: Academic CV
+email: your-email@example.com
+description: >-
+  Personal academic website of Younjoo &mdash; CV, publications, talks and teaching.
+# Leave baseurl empty when serving from a user/organization site (USERNAME.github.io).
+baseurl: ""
+url: "https://younjoo0614.github.io"
+
+# Author / profile (used on the homepage banner and the CV page)
+author:
+  name: Younjoo
+  avatar: /assets/images/pic01.jpg
+  bio: >-
+    Researcher / student. Replace this bio in <code>_config.yml</code> with a
+    short description of who you are and what you work on.
+  location: Seoul, South Korea
+  employer: Your Affiliation
+
+# Contact info (used by forty's footer contact section)
+street_address:
+city:
+state:
+zip_code:
+country:
+phone:
+
+# Homepage tile config (kept for compatibility with forty includes)
+tiles-source: pages
+tiles-count: 6
+
+# Social settings - key must match name of font awesome icon
+# Icons are not shown if value is empty
+socials:
+  GitHub: https://github.com/younjoo0614
+  LinkedIn:
+  Twitter:
+  Google-Plus:
+  Instagram:
+  GitLab:
+  Facebook:
+  Slack:
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+
+# Jekyll collections (academicpages-style content architecture)
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
+# Default front-matter per scope so collection items get the right layout
+defaults:
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: archive-single
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: archive-single
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: archive-single
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: archive-single
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+include:
+  - _pages
+
+exclude:
+  - "*.gemspec"
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .bundle

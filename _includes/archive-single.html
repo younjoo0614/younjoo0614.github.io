@@ -1,0 +1,16 @@
+{% assign post = include.post %}
+<li>
+	<article class="archive-entry">
+		<h3 style="margin-bottom:0.25em;">
+			<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+		</h3>
+		<p style="margin:0 0 0.5em 0; color: rgba(255,255,255,0.55); font-size: 0.9em;">
+			{% if post.date %}{{ post.date | date: "%B %d, %Y" }}{% endif %}
+			{% if post.venue %} &middot; {{ post.venue }}{% endif %}
+			{% if post.location %} &middot; {{ post.location }}{% endif %}
+		</p>
+		{% if post.excerpt %}
+			<p style="margin:0;">{{ post.excerpt | strip_html | truncate: 240 }}</p>
+		{% endif %}
+	</article>
+</li>
