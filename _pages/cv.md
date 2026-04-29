@@ -1,33 +1,15 @@
 ---
 layout: cv
 title: "Curriculum Vitae"
-description: "Education, work experience, publications, talks and teaching."
+description: "Education, publications, experience, talks and skills."
 permalink: /cv/
 ---
 
 ## Education
 
-- **Ph.D.** &mdash; *Your University*, year (in progress / expected year)
-- **M.S.** &mdash; *Your University*, year
-- **B.S.** &mdash; *Your University*, year
-
-## Work experience
-
-- **Year &ndash; Year**: *Position*
-  - *Affiliation*
-  - Brief description of duties / responsibilities.
-
-- **Year &ndash; Year**: *Position*
-  - *Affiliation*
-  - Brief description of duties / responsibilities.
-
-## Skills
-
-- Skill 1
-- Skill 2
-  - Sub-skill 2.1
-  - Sub-skill 2.2
-- Skill 3
+- **Present** *Seoul National University*, Graduate School of Convergence Science and Technology
+- **B.S.** &mdash; *Seoul National University*, Electrical and Computer engineering 2024
+- **Exchange program & Research internship at Safari** *ETH Zürich* 2022
 
 ## Publications
 
@@ -35,12 +17,34 @@ permalink: /cv/
 {% assign pubs = site.publications | sort: 'date' | reverse %}
 {% for post in pubs %}
 	<li>
-		<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-		{% if post.venue %} &mdash; <em>{{ post.venue }}</em>{% endif %}
-		{% if post.date %} ({{ post.date | date: "%Y" }}){% endif %}
+		{% assign authors_display = post.authors | default: '' | replace: 'Younjoo Lee', '<strong>Younjoo Lee</strong>' %}
+		{% if authors_display != '' %}{{ authors_display }}. {% endif %}<em>{{ post.title }}</em>.{% if post.venue %} {{ post.venue }}.{% endif %}{% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
+		{% if post.excerpt and post.excerpt contains 'Nominated for Best Paper' %}
+			<br />- <em>Nominated for Best Paper</em>
+		{% endif %}
 	</li>
 {% endfor %}
 </ul>
+
+## Experience
+
+- Google TPU Builder Apr. 2026 - Now
+	- Built efficient diffusion LLM framework (DyLLM) on TPU using PyTorch and Pallas kernels
+	<!-- - Attended Google AI DevLabs 2026 (Sunnyvale, California) with DyLLM project. -->
+- Safari research internship: Sep. 2022 - Dec. 2023
+	- Project name: 'Comprehensive characterization and optimization of seeding algorithms on modern FPGAs'
+	- Implemented various seeding algorithms on full read mapping FPGA/CPU pipeline and evaluated their accuracy, performance etc. on 3 major read types (ONT, HiFi, Illumina)
+	- HLS kernels, testing on real FPGA(alveo-u55c) privileged by HACC program of Xilinx.
+	- T/A of Project & Seminar course in ETH: Sep. 2022 - Dec. 2022
+- LikeLion 8th (2020), Wafflestudio (2021) both web service engineering club in SNU
+	- Launched social network web service logging what people read on their own online bookshelf using Django framework on AWS Elastic Beanstalk.
+
+
+
+## Skills & Languages
+
+- PyTorch, CUDA programming, GPU system maintenance
+- Languages: Korean (native), English (fluent)
 
 ## Projects
 
@@ -60,4 +64,6 @@ permalink: /cv/
 
 ## Service and leadership
 
-- Add service entries here.
+- Seoul National University varsity Tennis Team
+- Presiduent of SNU tennis club in Engineering Department
+

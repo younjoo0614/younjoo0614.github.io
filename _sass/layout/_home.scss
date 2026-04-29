@@ -30,6 +30,8 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			position: relative;
+			z-index: 3;
 		}
 
 		.profile-image {
@@ -48,10 +50,14 @@
 		.profile-icons {
 			list-style: none;
 			padding: 0;
-			margin: 1em 0 0 0;
+			margin: 1.15em 0 0 0;
 			display: flex;
+			align-items: center;
 			justify-content: center;
 			gap: 0.9em;
+			overflow: visible;
+			position: relative;
+			z-index: 3;
 
 			li {
 				padding: 0;
@@ -59,11 +65,17 @@
 			}
 
 			a.icon {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
 				color: _palette(fg);
 				opacity: 0.85;
 				transition: opacity 0.2s ease, color 0.2s ease;
 
 				&:before {
+					display: block;
+					line-height: 1;
 					font-size: 1.6em;
 				}
 
@@ -93,6 +105,20 @@
 					text-transform: uppercase;
 					margin-bottom: 0;
 					opacity: 0.85;
+				}
+
+				p.bio {
+					font-size: 0.75em;
+					font-weight: _font(weight);
+					letter-spacing: 0.03em;
+					text-transform: none;
+					margin-top: 0.55em;
+					margin-bottom: 0;
+					opacity: 0.82;
+				}
+
+				p.bio.latest-publication {
+					margin-top: 0.2em;
 				}
 			}
 

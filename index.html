@@ -22,6 +22,11 @@ title: Home
 	{% if site.email and site.email != '' and site.email != 'your-email@example.com' %}
 		{% assign has_email = true %}
 	{% endif %}
+	{% assign latest_publication_url = site.author.latest_publication_url | default: '' %}
+	{% assign latest_publication_external = false %}
+	{% if latest_publication_url contains '://' %}
+		{% assign latest_publication_external = true %}
+	{% endif %}
 
 	<!-- Banner: profile (avatar + links) on the left -->
 	<section id="banner" class="major profile-banner">
@@ -45,6 +50,15 @@ title: Home
 							{% if site.author.employer %}{{ site.author.employer }}{% endif %}
 							{% if site.author.employer and site.author.location %} &middot; {% endif %}
 							{% if site.author.location %}{{ site.author.location }}{% endif %}
+						</p>
+					{% endif %}
+					{% if site.author.bio and site.author.bio != '' %}
+						<p class="bio">{{ site.author.bio | strip_html }}</p>
+					{% endif %}
+					{% if site.author.latest_publication_title and latest_publication_url != '' %}
+						<p class="bio latest-publication">
+							{{ site.author.latest_publication_label | default: 'Latest publication' }}:
+							<a href="{% if latest_publication_external %}{{ latest_publication_url }}{% else %}{{ latest_publication_url | relative_url }}{% endif %}"{% if latest_publication_external %} target="_blank" rel="noopener"{% endif %}>{{ site.author.latest_publication_title }}</a>
 						</p>
 					{% endif %}
 				</header>

@@ -13,18 +13,24 @@ author:
   name: Younjoo Lee
   avatar: /assets/images/profile.jpg
   bio: >-
-    Researcher / student. Replace this bio in <code>_config.yml</code> with a
-    short description of who you are and what you work on.
-  location: Seoul, South Korea
+    Hi! I am Younjoo, a graduate student at Seoul National University supervised by Prof. Jung Ho Ahn.
+    My research interests include AI systems, computer architecture, and diffusion LLMs. 
+    I believe my research can help shape the future of AI and computing, 
+    and I am committed to turning that belief into impact through rigorous research and collaboration.
+  latest_publication_label: My latest research on diffusion LLMs
+  latest_publication_title: "DyLLM"
+  latest_publication_url: https://arxiv.org/abs/2603.08026
+  location: Seoul, Republic of Korea
   employer: Seoul National University
 
 # Contact info (used by forty's footer contact section)
-street_address:
-city:
-state:
-zip_code:
-country:
-phone:
+# Address/phone temporarily disabled. Uncomment when you want to restore.
+# street_address:
+# city:
+# state:
+# zip_code:
+# country:
+# phone:
 
 # Homepage tile config (kept for compatibility with forty includes)
 tiles-source: pages
