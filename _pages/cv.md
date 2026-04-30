@@ -9,7 +9,7 @@ permalink: /cv/
 
 - **Present** *Seoul National University*, Graduate School of Convergence Science and Technology
 - **B.S.** &mdash; *Seoul National University*, Electrical and Computer engineering 2024
-- **Exchange program & Research internship at Safari** *ETH Zürich* 2022
+- **Exchange program & Research internship at [SAFARI](https://safari.ethz.ch)** *ETH Zürich* 2022
 
 ## Publications
 
