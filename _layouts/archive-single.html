@@ -41,6 +41,7 @@
 	<div id="main" class="alt">
 		<section>
 			<div class="inner">
+				{% unless page.collection == 'publications' %}
 				<header class="major">
 					<h2>Details</h2>
 				</header>
@@ -52,6 +53,7 @@
 					{% if page.authors %}<li><strong>Authors:</strong> {{ page.authors }}</li>{% endif %}
 					{% if page.collection %}<li><strong>Type:</strong> {{ page.collection | capitalize }}</li>{% endif %}
 				</ul>
+				{% endunless %}
 
 				{{ content }}
 
