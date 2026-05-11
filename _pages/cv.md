@@ -65,5 +65,5 @@ permalink: /cv/
 ## Service and leadership
 
 - Seoul National University varsity Tennis Team
-- Presiduent of SNU tennis club in Engineering Department
+- President of SNU tennis club in Engineering Department
 
