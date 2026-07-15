@@ -3,9 +3,9 @@ title: "DyLLM: Efficient Diffusion LLM Inference via Saliency-Based Token Select
 collection: publications
 permalink: /publication/2026-dyllm
 excerpt: "ICML, 2026"
-date: 2026-05-02
+date: 2026-07-06
 venue: ICML
-authors: "Younjoo Lee, Seungkyun Dan, Jaiyoung Park, Junghoo Lee, Jung Ho Ahn"
+authors: "Younjoo Lee, Seungkyun Dan, Junghoo Lee, Jaiyoung Park,  Jung Ho Ahn"
 paperurl: "https://arxiv.org/abs/2603.08026"
 ---
 

@@ -7,9 +7,11 @@ permalink: /cv/
 
 ## Education
 
-- **Present** *Seoul National University*, Graduate School of Convergence Science and Technology
-- **B.S.** &mdash; *Seoul National University*, Electrical and Computer engineering 2024
-- **Exchange program & Research internship at [SAFARI](https://safari.ethz.ch)** *ETH Zürich* 2022
+- **Sep. 2024 &ndash; Present** &mdash; *Seoul National University (SNU)*, M.S./Ph.D. in Intelligence and Information
+	- Advisor: Prof. Jung Ho Ahn (SCALE lab)
+- **Sep. 2022 &ndash; Feb. 2023** &mdash; Research intern at [SAFARI](https://safari.ethz.ch), *ETH Zürich*
+- **Feb. 2022 &ndash; Aug. 2022** &mdash; Exchange program, *ETH Zürich*
+- **Feb. 2019 &ndash; Aug. 2024** &mdash; *Seoul National University (SNU)*, B.S. in Electrical and Computer Engineering
 
 ## Publications
 
@@ -28,22 +30,29 @@ permalink: /cv/
 
 ## Experience
 
-- Google TPU Builder Apr. 2026 - Now
-	- Built efficient diffusion LLM framework (DyLLM) on TPU using PyTorch and Pallas kernels
+- **Google TPU Builder Program** &mdash; Apr. 2026 &ndash; Present
+	- Built efficient diffusion LLM framework (DyLLM) on TPU using PyTorch XLA and Pallas kernels in TPU Sprint.
 	<!-- - Attended Google AI DevLabs 2026 (Sunnyvale, California) with DyLLM project. -->
-- Safari research internship: Sep. 2022 - Dec. 2023
+- **GPU/HPC Server Administration**, SCALE lab &mdash; Sep. 2024 &ndash; Present
+	- Plan and configure GPU/HPC server specifications based on workload requirements, including motherboard, PSU, GPU, CPU, memory, storage, cooling, etc.
+	- Troubleshoot server, software, environment, and network issues.
+	- Set up and maintain servers.
+- **Safari research internship**, ETH Zürich &mdash; Sep. 2022 &ndash; Feb. 2023
 	- Project name: 'Comprehensive characterization and optimization of seeding algorithms on modern FPGAs'
-	- Implemented various seeding algorithms on full read mapping FPGA/CPU pipeline and evaluated their accuracy, performance etc. on 3 major read types (ONT, HiFi, Illumina)
-	- HLS kernels, testing on real FPGA(alveo-u55c) privileged by HACC program of Xilinx.
-	- T/A of Project & Seminar course in ETH: Sep. 2022 - Dec. 2022
-- LikeLion 8th (2020), Wafflestudio (2021) both web service engineering club in SNU
-	- Launched social network web service logging what people read on their own online bookshelf using Django framework on AWS Elastic Beanstalk.
+	- Implemented and accelerated various seeding algorithms on a full read-mapping FPGA/CPU pipeline and evaluated their accuracy, performance, etc. on 3 major read types (ONT, HiFi, Illumina).
+	- Developed HLS kernels, tested on a real Alveo U55C FPGA provided through the Xilinx HACC program.
+	- Teacher of Project & Seminar course at ETH: Sep. 2022 &ndash; Dec. 2022.
+- **LikeLion 8th (2020), Wafflestudio (2021)** &mdash; web service engineering clubs in SNU
+	- Launched a social network web service for tracking users' reading activity on their own online bookshelf using the Django framework on AWS Elastic Beanstalk.
 
+## Academic Services
 
+- Reviewer, IEEE Transactions on Computers (TC), 2026
+- Artifact Evaluation Reviewer, HPCA, 2026
 
 ## Skills & Languages
 
-- PyTorch, CUDA programming, GPU system maintenance
+- CUDA/C++, PyTorch/XLA, FPGA HLS, GPU/HPC server maintenance
 - Languages: Korean (native), English (fluent)
 
 ## Projects
@@ -62,8 +71,10 @@ permalink: /cv/
 {% endfor %}
 </ul>
 
-## Service and leadership
+## Leadership and Awards
 
+- Cheongpa Scholarship (2025, 2026)
 - Seoul National University varsity Tennis Team
-- President of SNU tennis club in Engineering Department
+- President, SNU Engineering Tennis Club
+	- Held several tennis tournaments in SNU.
 
